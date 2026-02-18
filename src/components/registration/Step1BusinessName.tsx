@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import { useRegistration } from "./RegistrationContext";
 import { Button } from "../ui/Button";
-import { Input } from "../ui/Input";
+import { useRegistration } from "./RegistrationContext";
 
 export default function Step1BusinessName() {
   const { data, updateData, setStep } = useRegistration();
@@ -42,6 +41,24 @@ export default function Step1BusinessName() {
             className="absolute text-[16px] text-[#444746] duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-1 peer-focus:px-1 peer-focus:text-[#0b57d0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-2.5"
           >
             Business name
+          </label>
+        </div>
+
+        <div className="relative">
+          <input
+            type="text"
+            id="businessCategory"
+            value={data.businessCategory}
+            onChange={(e) => updateData({ businessCategory: e.target.value })}
+            className="block px-3.5 pb-2.5 pt-4 w-full text-[16px] text-[#1f1f1f] bg-transparent rounded-[4px] border border-[#747775] focus:border-[#0b57d0] focus:ring-1 focus:ring-[#0b57d0] appearance-none focus:outline-none peer h-[56px]"
+            placeholder=" "
+            required
+          />
+          <label
+            htmlFor="businessCategory"
+            className="absolute text-[16px] text-[#444746] duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-1 peer-focus:px-1 peer-focus:text-[#0b57d0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-2.5"
+          >
+            Business category
           </label>
         </div>
       </div>

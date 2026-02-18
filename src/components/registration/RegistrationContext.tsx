@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 
 interface RegistrationData {
   businessName: string;
+  businessCategory: string;
   businessAddress: string;
   email: string;
   password: string; // In real app, avoid storing plain text if possible, but for this flow we just pass it
@@ -30,6 +31,7 @@ const RegistrationContext = createContext<RegistrationContextType | undefined>(
 export function RegistrationProvider({ children }: { children: ReactNode }) {
   const [data, setData] = useState<RegistrationData>({
     businessName: "",
+    businessCategory: "",
     businessAddress: "",
     email: "",
     password: "",
